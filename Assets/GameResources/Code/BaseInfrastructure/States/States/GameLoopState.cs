@@ -7,7 +7,6 @@ namespace Code.BaseInfrastructure.States.States
   {
     public void Enter()
     {
-      Debug.Log("Игра запущена!");
     }
 
     public void Exit()

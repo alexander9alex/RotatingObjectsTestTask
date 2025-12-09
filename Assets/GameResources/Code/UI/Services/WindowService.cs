@@ -10,7 +10,7 @@ namespace Code.UI.Services
   public class WindowService : IWindowService
   {
     private readonly IWindowFactory _windowFactory;
-    private List<BaseWindow> _spawnedWindows;
+    private readonly List<BaseWindow> _spawnedWindows = new();
 
     public WindowService(IWindowFactory windowFactory) =>
       _windowFactory = windowFactory;
