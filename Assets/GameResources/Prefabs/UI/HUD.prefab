@@ -206,8 +206,9 @@ GameObject:
   - component: {fileID: 6905800062800051948}
   - component: {fileID: 3424203749113229983}
   - component: {fileID: 426647740841556435}
+  - component: {fileID: 4236603814634936967}
   m_Layer: 5
-  m_Name: SelectObjectButton
+  m_Name: OpenSelectObjectMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,3 +316,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4236603814634936967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768729068529389807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96d7527835b4f74aeffc7c7e712105d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _windowId: 2
+  _openWindow: 1

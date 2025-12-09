@@ -4,5 +4,6 @@
   {
     Unknown = 0,
     HUD = 1,
+    SelectingObjectsMenu = 2,
   }
 }

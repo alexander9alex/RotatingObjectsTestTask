@@ -24,9 +24,9 @@ namespace Code.UI.Services
 
     public void CloseWindow(WindowId windowId)
     {
-      BaseWindow window = _spawnedWindows.FirstOrDefault(x => x.Id == windowId);
+      BaseWindow window = _spawnedWindows.Find(x => x.Id == windowId);
       _spawnedWindows.Remove(window);
-      Object.Destroy(window);
+      Object.Destroy(window.gameObject);
     }
   }
 }

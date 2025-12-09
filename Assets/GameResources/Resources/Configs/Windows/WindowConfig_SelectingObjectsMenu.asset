@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b986b34137e465e87eb86758ebb3334, type: 3}
-  m_Name: WindowConfig_HUD
+  m_Name: WindowConfig_SelectingObjectsMenu
   m_EditorClassIdentifier: 
-  WindowId: 1
-  Prefab: {fileID: 202386577872399771, guid: 65ac68b29bbb06e40b19a1fad484fc7c, type: 3}
+  WindowId: 2
+  Prefab: {fileID: 562529182087465595, guid: 7229a7c79e68c0545ba8e9f1f99d1c1b, type: 3}
