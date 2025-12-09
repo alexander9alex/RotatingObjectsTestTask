@@ -8,8 +8,11 @@ namespace Code.BaseInfrastructure.Loading
 
   public class SceneLoader : ISceneLoader
   {
-    private ICoroutineRunner _coroutineRunner;
+    private readonly ICoroutineRunner _coroutineRunner;
     private AsyncOperation _waitNextScene;
+
+    public SceneLoader(ICoroutineRunner coroutineRunner) =>
+      _coroutineRunner = coroutineRunner;
 
     public void LoadScene(string scene, Action onLoaded = null) =>
       _coroutineRunner.StartCoroutine(LoadSceneCoroutine(scene, onLoaded));
