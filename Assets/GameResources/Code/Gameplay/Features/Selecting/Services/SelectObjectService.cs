@@ -11,8 +11,11 @@
 
     public void SelectObject(ObjectId objectId)
     {
-      SelectedObjectId = objectId;
-      onSelectedObjectChanged();
+      if (SelectedObjectId != objectId)
+      {
+        SelectedObjectId = objectId;
+        onSelectedObjectChanged();
+      }
     }
 
     public void UnselectObject()
