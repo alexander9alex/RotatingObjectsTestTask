@@ -1,10 +1,13 @@
 ﻿namespace Code.BaseInfrastructure.Installers
 {
+  using Common.Services.Data;
   using CoroutineRunner;
   using Loading;
   using States.Factory;
   using States.StateMachine;
   using States.States;
+  using UI.Factory;
+  using UI.Services;
   using Zenject;
 
   public class BootstrapInstaller : MonoInstaller, ICoroutineRunner
@@ -18,13 +21,18 @@
       BindGameStarter();
     }
 
-    private void BindFactories() =>
+    private void BindFactories()
+    {
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+      Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+    }
 
     private void BindServices()
     {
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
       Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
+      Container.Bind<IDataService>().To<DataService>().AsSingle();
+      Container.Bind<IWindowService>().To<WindowService>().AsSingle();
     }
 
     private void BindGameStates()
