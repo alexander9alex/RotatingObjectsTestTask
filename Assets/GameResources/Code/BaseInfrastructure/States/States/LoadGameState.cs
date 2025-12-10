@@ -1,11 +1,13 @@
 namespace Code.BaseInfrastructure.States.States
 {
+  using Gameplay.Features.Rotation.Services;
   using Loading;
   using StateInfrastructure;
   using StateMachine;
   using UI.Data;
   using UI.Services;
   using UI.Windows;
+  using UnityEngine;
 
   public class LoadGameState : IState
   {
@@ -14,12 +16,14 @@ namespace Code.BaseInfrastructure.States.States
     private readonly IGameStateMachine _gameStateMachine;
     private readonly ISceneLoader _sceneLoader;
     private readonly IWindowService _windowService;
+    private readonly IRotateObjectService _rotateObjectService;
 
-    public LoadGameState(IGameStateMachine gameStateMachine, ISceneLoader sceneLoader, IWindowService windowService)
+    public LoadGameState(IGameStateMachine gameStateMachine, ISceneLoader sceneLoader, IWindowService windowService, IRotateObjectService rotateObjectService)
     {
       _gameStateMachine = gameStateMachine;
       _sceneLoader = sceneLoader;
       _windowService = windowService;
+      _rotateObjectService = rotateObjectService;
     }
 
     public void Enter() =>
@@ -32,6 +36,7 @@ namespace Code.BaseInfrastructure.States.States
     private void OnSceneLoaded()
     {
       _windowService.OpenWindow<HUD>(WindowId.HUD);
+      _rotateObjectService.SetCamera(Camera.main);
       _gameStateMachine.Enter<GameLoopState>();
     }
   }
