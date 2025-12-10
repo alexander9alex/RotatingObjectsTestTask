@@ -6,5 +6,6 @@
     HUD = 1,
     SelectingObjectsMenu = 2,
     ObjectDescriptionMenu = 3,
+    ObjectParametersMenu = 4,
   }
 }

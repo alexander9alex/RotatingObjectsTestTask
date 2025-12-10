@@ -8,5 +8,6 @@ namespace Code.Gameplay.Features.Selecting.Data
     public ObjectId ObjectId;
     public GameObject Prefab;
     public string Description;
+    public string Parameters;
   }
 }
