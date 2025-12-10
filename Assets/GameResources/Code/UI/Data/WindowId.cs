@@ -5,5 +5,6 @@
     Unknown = 0,
     HUD = 1,
     SelectingObjectsMenu = 2,
+    ObjectDescriptionMenu = 3,
   }
 }
