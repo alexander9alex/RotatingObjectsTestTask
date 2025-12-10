@@ -2,6 +2,7 @@
 {
   using Common.Services.Data;
   using CoroutineRunner;
+  using Gameplay.Features.Selecting.Services;
   using Loading;
   using States.Factory;
   using States.StateMachine;
@@ -33,6 +34,7 @@
       Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
       Container.Bind<IDataService>().To<DataService>().AsSingle();
       Container.Bind<IWindowService>().To<WindowService>().AsSingle();
+      Container.Bind<ISelectObjectService>().To<SelectObjectService>().AsSingle();
     }
 
     private void BindGameStates()
