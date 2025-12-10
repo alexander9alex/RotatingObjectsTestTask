@@ -3,6 +3,7 @@
   using Common.Services.Data;
   using CoroutineRunner;
   using Gameplay.Features.Input.Service;
+  using Gameplay.Features.Rotation.Services;
   using Gameplay.Features.Selecting.Services;
   using Loading;
   using States.Factory;
@@ -10,6 +11,7 @@
   using States.States;
   using UI.Factory;
   using UI.Services;
+  using UnityEngine.UIElements;
   using Zenject;
 
   public class BootstrapInstaller : MonoInstaller, ICoroutineRunner
@@ -37,6 +39,7 @@
       Container.Bind<IWindowService>().To<WindowService>().AsSingle();
       Container.Bind<ISelectObjectService>().To<SelectObjectService>().AsSingle();
       Container.Bind<IInputService>().To<InputService>().AsSingle();
+      Container.Bind<IRotateObjectService>().To<RotateObjectService>().AsSingle();
     }
 
     private void BindGameStates()

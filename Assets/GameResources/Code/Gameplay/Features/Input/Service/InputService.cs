@@ -8,6 +8,7 @@
   {
     public event Action onClickStarted = delegate {};
     public event Action onClickEnded = delegate {};
+    public event Action onMousePositionDeltaChanged = delegate {};
 
     public Vector2 MousePosition { get; private set; }
     public Vector2 MousePositionDelta { get; private set; }
@@ -38,6 +39,12 @@
     public void DisableInput() =>
       _inputActions.Disable();
 
+    private void UpdateMousePositionDelta(InputAction.CallbackContext context)
+    {
+      MousePositionDelta = context.ReadValue<Vector2>();
+      onMousePositionDeltaChanged();
+    }
+
     private void ClickStarted(InputAction.CallbackContext context) =>
       onClickStarted();
 
@@ -46,8 +53,5 @@
 
     private void UpdateMousePosition(InputAction.CallbackContext context) =>
       MousePosition = context.ReadValue<Vector2>();
-
-    private void UpdateMousePositionDelta(InputAction.CallbackContext context) =>
-      MousePositionDelta = context.ReadValue<Vector2>();
   }
 }

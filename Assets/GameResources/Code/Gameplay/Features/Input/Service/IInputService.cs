@@ -11,5 +11,6 @@
     Vector2 MousePositionDelta { get; }
     void EnableInput();
     void DisableInput();
+    event Action onMousePositionDeltaChanged;
   }
 }
