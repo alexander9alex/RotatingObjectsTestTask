@@ -1,5 +1,6 @@
 ﻿namespace Code.Gameplay.Features.Selecting.Services
 {
+  using System;
   using Common.Services.Data;
   using Data;
   using UnityEngine;
@@ -7,6 +8,7 @@
 
   public class SelectObjectService : ISelectObjectService
   {
+    public event Action onSelectedObjectChanged = delegate {};
     public GameObject SelectedObject { get; private set; }
     public ObjectId? SelectedObjectId { get; private set; }
 
@@ -23,6 +25,7 @@
       SelectedObjectId = objectId;
       DestroySelectedObject();
       SpawnSelectedObject();
+      onSelectedObjectChanged();
     }
 
     private void DestroySelectedObject()
